@@ -1,0 +1,15 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /_ah/push-handlers/.*
+  script: main.app
+
+libraries:
+- name: flask
+  version: "0.12"
+
+env_variables:
+    PUBSUB_TOPIC: projects/engelke-pi-showcase/topics/notify-user
+    PUBSUB_VERIFICATION_TOKEN: 62vlmhkpFORwNLR9jiG2
