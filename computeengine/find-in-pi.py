@@ -46,7 +46,7 @@ def notify(email, what, where):
 
 if __name__ == "__main__":
     subscriber = pubsub.SubscriberClient()
-    subscription_path = 'projects/{}/subscription/{}'.format(
+    subscription_path = 'projects/{}/subscriptions/{}'.format(
         PROJECT, REQUEST_SUBSCRIPTION
     )
 
