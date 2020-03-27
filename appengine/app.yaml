@@ -11,5 +11,6 @@ libraries:
   version: "0.12"
 
 env_variables:
-    PUBSUB_TOPIC: projects/engelke-pi-showcase/topics/notify-user
-    PUBSUB_VERIFICATION_TOKEN: 62vlmhkpFORwNLR9jiG2
+    PROJECT_ID: 'your-project-id-goes here'
+    PUBSUB_TOPIC: 'your-pubsub-notification-topic-full-name-goes-here'
+    PUBSUB_VERIFICATION_TOKEN: 'random-value-you-configured-push-topic-with'

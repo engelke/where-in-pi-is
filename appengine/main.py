@@ -9,6 +9,8 @@ from google.appengine.api import app_identity
 from google.appengine.api import mail
 
 
+SENDER_EMAIL = 'where-in-py@{}.appspotmail.com'.format(os.environ['PROJECT_ID'])
+
 app = Flask(__name__)
 
 app.config['PUBSUB_VERIFICATION_TOKEN'] = os.environ['PUBSUB_VERIFICATION_TOKEN']
@@ -17,8 +19,7 @@ app.config['PUBSUB_TOPIC'] = os.environ['PUBSUB_TOPIC']
 
 def notify_requester(email, location, search):
     logging.debug('Trying to send an email')
-    sender = 'where-in-pi-is@engelke.com'
-    sender = 'engelke@google.com'   # Workaround for right now
+    sender = SENDER_EMAIL
     url = 'https://api.pi.delivery/v1/pi?start={}&numberOfDigits={}'.format(location, len(search))
 
     mail.send_mail(sender=sender,

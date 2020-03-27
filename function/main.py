@@ -7,10 +7,14 @@
 """
 
 import json
-import google.cloud.pubsub_v1
+import google.cloud.pubsub
 
-topic_name = 'projects/engelke-pi-showcase/topics/find-string'
-publisher = google.cloud.pubsub_v1.PublisherClient()
+
+PROJECT = 'your-project-name-goes-here'
+REQUEST_TOPIC = 'your-request-pubsub-topic-name-goes-here'
+
+topic_name = 'projects/{}/topics/{}'.format(PROJECT, REQUEST_TOPIC)
+publisher = google.cloud.pubsub.PublisherClient()
 
 
 def form_page():
